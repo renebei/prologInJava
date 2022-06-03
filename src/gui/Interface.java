@@ -32,7 +32,8 @@ public class Interface extends JFrame implements ActionListener {
         add(panel, BorderLayout.CENTER);
         add(res, BorderLayout.NORTH);
         setVisible(true);
-        setSize(600, 600);
+        setSize(1000, 1000);
+        res.setFont(new Font("Arial", Font.PLAIN, 40));
     }
 
     @Override
@@ -97,48 +98,59 @@ public class Interface extends JFrame implements ActionListener {
     private void initButtons() {
         for (int i = 0; i <= 9; i++) {
             numbers[i] = new JButton(i + "");
+            numbers[i].setFont(new Font("Arial", Font.PLAIN, 40));
             panel.add(numbers[i]);
             numbers[i].addActionListener(this);
         }
 
         this.plus = new JButton("+");
         this.plus.addActionListener(this);
+        this.plus.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(plus);
 
         this.minus = new JButton("-");
         this.minus.addActionListener(this);
+        this.minus.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(minus);
 
         this.multiplication = new JButton("*");
         this.multiplication.addActionListener(this);
+        this.multiplication.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(multiplication);
 
         this.division = new JButton("/");
         this.division.addActionListener(this);
+        this.division.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(division);
 
         this.modulo = new JButton("%");
         this.modulo.addActionListener(this);
+        this.modulo.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(modulo);
 
         this.power = new JButton("^");
         this.power.addActionListener(this);
+        this.power.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(power);
 
         this.squareRoot = new JButton("√");
         this.squareRoot.addActionListener(this);
+        this.squareRoot.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(squareRoot);
 
         this.fak = new JButton("!");
         this.fak.addActionListener(this);
+        this.fak.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(fak);
 
         this.equals = new JButton("=");
         this.equals.addActionListener(this);
+        this.equals.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(equals);
 
         this.AC = new JButton("AC");
         this.AC.addActionListener(this);
+        this.AC.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(AC);
 
     }
