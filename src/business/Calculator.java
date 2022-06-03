@@ -4,6 +4,7 @@ import org.jpl7.Query;
 import org.jpl7.Term;
 import org.jpl7.Variable;
 
+import javax.swing.*;
 import java.util.Map;
 
 public class Calculator {
@@ -26,5 +27,62 @@ public class Calculator {
             System.out.println(map);
         }
         power.close();
+    }
+    public void minus(double a, double b) {
+        Variable z = new Variable("Z");
+        Term term = Term.textToTerm("minus(" + a + "," + b + "," + z + ")");
+        Query minus = new Query(term);
+        for (Map<String, Term> map : minus.allSolutions()) {
+            System.out.println(map);
+        }
+        minus.close();
+    }
+    public void multiplication(double a, double b) {
+        Variable z = new Variable("Z");
+        Term term = Term.textToTerm("multiplication(" + a + "," + b + "," + z + ")");
+        Query multiplication = new Query(term);
+        for (Map<String, Term> map : multiplication.allSolutions()) {
+            System.out.println(map);
+        }
+        multiplication.close();
+    }
+
+    public void division(double a, double b) {
+        Variable z = new Variable("Z");
+        Term term = Term.textToTerm("division(" + a + "," + b + "," + z + ")");
+        Query division = new Query(term);
+        for (Map<String, Term> map : division.allSolutions()) {
+            System.out.println(map);
+        }
+        division.close();
+    }
+    public void modulo(double a, double b) {
+        Variable z = new Variable("Z");
+        Term term = Term.textToTerm("modulo(" + a + "," + b + "," + z + ")");
+        Query modulo = new Query(term);
+        for (Map<String, Term> map : modulo.allSolutions()) {
+            System.out.println(map);
+        }
+        modulo.close();
+    }
+
+    public void squareRoot(double a) {
+        Variable z = new Variable("Z");
+        Term term = Term.textToTerm("squareRoot(" + a + "," + z + ")");
+        Query squareRoot = new Query(term);
+        for (Map<String, Term> map : squareRoot.allSolutions()) {
+            System.out.println(map);
+        }
+        squareRoot.close();
+    }
+
+    public void fak(double a) {
+        Variable z = new Variable("Z");
+        Term term = Term.textToTerm("fak(" + a + "," + z + ")");
+        Query squareRoot = new Query(term);
+        for (Map<String, Term> map : squareRoot.allSolutions()) {
+            System.out.println(map);
+        }
+        squareRoot.close();
     }
 }

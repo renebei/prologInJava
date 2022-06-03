@@ -1,6 +1,7 @@
 package main;
 
 import business.Calculator;
+import gui.Interface;
 import org.jpl7.Atom;
 import org.jpl7.JPL;
 import org.jpl7.Query;
@@ -24,23 +25,7 @@ public class Dialog {
     }
 
     public void dialog() {
-        output();
-        switch (userInput()) {
-            case 1:
-                System.out.println("First number?: ");
-                double a = scan.nextInt();
-                System.out.println("Second number?: ");
-                double b = scan.nextInt();
-                calc.add(a, b);
-                break;
-            case 2:
-                System.out.println("First number?: ");
-                double c = scan.nextInt();
-                System.out.println("Second number?: ");
-                double d = scan.nextInt();
-                calc.power(c, d);
-                break;
-        }
+        new Interface();
     }
 
     private int userInput() {
