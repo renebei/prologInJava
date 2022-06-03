@@ -4,11 +4,11 @@ add(X, Y, Z) :-
 power(X,Y,Z) :- 
     Z is X**Y.
 	
-fak(0,1). 
+fak(0,1).
 fak(N,Z) :-
-       N>0, 
-       N1 is N-1, 
-       fak(N1,F1), 
+       N>0,
+       N1 is N-1,
+       fak(N1,F1),
        Z is N * F1.
 	   
 modulo(X,Y,Z) :-
