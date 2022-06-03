@@ -8,32 +8,26 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Interface extends JFrame implements ActionListener {
-    private JButton plus, minus, modulo, division, power, multiplication, squareRoot, fak;
-    private JButton numbers[] = new JButton[10];
-    private int i, r, n1, n2;
+    private JButton plus, minus, modulo, division, power, multiplication, squareRoot, fak, EC, AC;
+    private JButton numbers[];
     private JTextField res;
-    private char op;
     private Calculator calc;
     private JPanel panel;
 
     public Interface() {
         super("Prolog Calculator");
+        this.numbers = new JButton[10];
+        this.calc = new Calculator();
+        this.res = new JTextField(10);
+        initButtons();
+
         setLayout(new BorderLayout());
         panel = new JPanel();
         panel.setLayout(new GridLayout(4, 4));
-        for (int i = 0; i <= 9; i++) {
-            numbers[i] = new JButton(i + "");
-            panel.add(numbers[i]);
-            numbers[i].addActionListener(this);
-        }
-        this.calc = new Calculator();
-        initButtons();
-
-        res=new JTextField(10);
-        add(panel,BorderLayout.CENTER);
-        add(res,BorderLayout.NORTH);
+        add(panel, BorderLayout.CENTER);
+        add(res, BorderLayout.NORTH);
         setVisible(true);
-        setSize(600,600);
+        setSize(600, 600);
     }
 
     private void initButtons() {
@@ -68,6 +62,20 @@ public class Interface extends JFrame implements ActionListener {
         this.fak = new JButton("!");
         this.fak.addActionListener(this);
         this.panel.add(fak);
+
+        this.EC = new JButton("EC");
+        this.EC.addActionListener(this);
+        this.panel.add(EC);
+
+        this.AC = new JButton("AC");
+        this.AC.addActionListener(this);
+        this.panel.add(AC);
+
+        for (int i = 0; i <= 9; i++) {
+            numbers[i] = new JButton(i + "");
+            panel.add(numbers[i]);
+            numbers[i].addActionListener(this);
+        }
     }
 
     @Override
@@ -87,8 +95,20 @@ public class Interface extends JFrame implements ActionListener {
             calc.modulo(3, 3);
         } else if (source == squareRoot) {
             calc.squareRoot(3);
-        } else if(source == fak) {
+        } else if (source == fak) {
             calc.fak(3);
+        } else if (source == AC) {
+            res.setText(null);
+        } else if(source == EC) {
+            res.setText(null);
+        } else {
+            for (int i = 0; i < 10; i++) {
+                if (source == numbers[i]) {
+                    String t = res.getText();
+                    t += i;
+                    res.setText(t);
+                }
+            }
         }
     }
 }

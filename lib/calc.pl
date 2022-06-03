@@ -18,7 +18,7 @@ squareRoot(X,Z) :-
     Z is sqrt(X).
 	 
 division(X,Y,Z) :-
-	Y = 0,
+	Y \= 0,
     Z is X / Y.
 
 multiplication(X,Y,Z) :-

@@ -1,13 +1,20 @@
 package business;
 
-import org.jpl7.Query;
-import org.jpl7.Term;
-import org.jpl7.Variable;
+import org.jpl7.*;
 
 import javax.swing.*;
 import java.util.Map;
 
 public class Calculator {
+
+    public Calculator() {
+        JPL.init();
+        Query q1 = new Query(
+                "consult"
+                , new Term[]{new Atom("lib/calc.pl")});
+        System.out.println("consult " + q1.hasSolution());
+        q1.close();
+    }
 
     public void add(double a, double b) {
         Variable z = new Variable("Z");
@@ -56,7 +63,7 @@ public class Calculator {
         }
         division.close();
     }
-    public void modulo(double a, double b) {
+    public void modulo(int a, int b) {
         Variable z = new Variable("Z");
         Term term = Term.textToTerm("modulo(" + a + "," + b + "," + z + ")");
         Query modulo = new Query(term);
