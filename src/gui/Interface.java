@@ -8,12 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Interface extends JFrame implements ActionListener {
-    private JButton plus, minus, modulo, division, power, multiplication, squareRoot, fak, equals, AC;
+    private JButton plus, minus, modulo, division, power, multiplication, squareRoot, fak, equals, AC, exit, cosinus, sinus;
     private JButton numbers[];
     private JTextField res;
     private JPanel panel;
 
-    private Command pl, mi, mo, di, po, mu, sq, f;
+    private Command pl, mi, mo, di, po, mu, sq, f, cos, sin;
     private Command last;
 
     private double entry1;
@@ -32,7 +32,7 @@ public class Interface extends JFrame implements ActionListener {
         add(panel, BorderLayout.CENTER);
         add(res, BorderLayout.NORTH);
         setVisible(true);
-        setSize(1000, 1000);
+        setSize(750, 500);
         res.setFont(new Font("Arial", Font.PLAIN, 40));
     }
 
@@ -61,13 +61,21 @@ public class Interface extends JFrame implements ActionListener {
         } else if (source == squareRoot) {
             entry1();
             last = sq;
-        } else if (source == fak) {
+        } else if(source == cosinus) {
             entry1();
-            last = f;
+            last = cos;
+        } else if(source == sinus) {
+            entry1();
+            last = sin;
+       // } else if (source == fak) {
+         //   entry1();
+           // last = f;
         } else if (source == AC) {
             entry1 = 0;
             entry2 = 0;
             res.setText(null);
+        } else if (source == exit) {
+            System.exit(0);
         } else if (source == equals) {
             if(!res.getText().equals(""))
                 this.entry2 = Double.parseDouble(res.getText());
@@ -89,7 +97,9 @@ public class Interface extends JFrame implements ActionListener {
         mu = new Multiplication();
         mo = new Modulo();
         di = new Division();
-        f = new Factorial();
+        cos = new Cosinus();
+        sin = new Sinus();
+        //f = new Factorial();
         po = new Power();
         sq = new SquareRoot();
         mi = new Minus();
@@ -138,10 +148,19 @@ public class Interface extends JFrame implements ActionListener {
         this.squareRoot.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(squareRoot);
 
-        this.fak = new JButton("!");
-        this.fak.addActionListener(this);
-        this.fak.setFont(new Font("Arial", Font.PLAIN, 40));
-        this.panel.add(fak);
+        this.cosinus = new JButton("cos");
+        this.cosinus.addActionListener(this);
+        this.cosinus.setFont(new Font("Arial", Font.PLAIN, 40));
+        this.panel.add(cosinus);
+        this.sinus = new JButton("sin");
+        this.sinus.addActionListener(this);
+        this.sinus.setFont(new Font("Arial", Font.PLAIN, 40));
+        this.panel.add(sinus);
+
+        //this.fak = new JButton("!");
+        //this.fak.addActionListener(this);
+        //this.fak.setFont(new Font("Arial", Font.PLAIN, 40));
+        //this.panel.add(fak);
 
         this.equals = new JButton("=");
         this.equals.addActionListener(this);
@@ -152,6 +171,11 @@ public class Interface extends JFrame implements ActionListener {
         this.AC.addActionListener(this);
         this.AC.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(AC);
+
+        this.exit = new JButton("off");
+        this.exit.addActionListener(this);
+        this.exit.setFont(new Font("Arial", Font.PLAIN, 40));
+        this.panel.add(exit);
 
     }
 

@@ -11,7 +11,7 @@ fak(N,Z) :-
        fak(N1,F1),
        Z is N * F1.
 	   
-modulo(X,Y,Z) :-
+modulo(X,Y,Z) :- 
     Z is mod(X,Y).
 	
 squareRoot(X,Z) :-
@@ -26,3 +26,9 @@ multiplication(X,Y,Z) :-
 
 minus(X,Y,Z) :-
     Z is X - Y.
+    
+cosinus(X, Z):-
+	Z is cos(X).
+	
+sinus(X, Z):-
+	Z is sin(X).
