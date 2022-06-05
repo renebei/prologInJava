@@ -15,4 +15,9 @@ public class Division extends Command {
         division.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "/";
+    }
 }

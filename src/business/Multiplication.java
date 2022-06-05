@@ -15,4 +15,9 @@ public class Multiplication extends Command {
         multiplication.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "*";
+    }
 }

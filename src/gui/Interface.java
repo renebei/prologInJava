@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Interface extends JFrame implements ActionListener {
-    private JButton plus, minus, modulo, division, power, multiplication, squareRoot, fak, equals, AC, exit, cosinus, sinus;
+    private JButton plus, minus, modulo, division, power, multiplication, squareRoot, fak, equals, AC, exit, cosinus, sinus, pi;
     private JButton numbers[];
     private JTextField res;
     private JPanel panel;
@@ -67,9 +67,8 @@ public class Interface extends JFrame implements ActionListener {
         } else if(source == sinus) {
             entry1();
             last = sin;
-       // } else if (source == fak) {
-         //   entry1();
-           // last = f;
+        } else if(source == pi) {
+            res.setText(String.valueOf(Math.PI));
         } else if (source == AC) {
             entry1 = 0;
             entry2 = 0;
@@ -99,7 +98,6 @@ public class Interface extends JFrame implements ActionListener {
         di = new Division();
         cos = new Cosinus();
         sin = new Sinus();
-        //f = new Factorial();
         po = new Power();
         sq = new SquareRoot();
         mi = new Minus();
@@ -152,20 +150,16 @@ public class Interface extends JFrame implements ActionListener {
         this.cosinus.addActionListener(this);
         this.cosinus.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(cosinus);
+
         this.sinus = new JButton("sin");
         this.sinus.addActionListener(this);
         this.sinus.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(sinus);
 
-        //this.fak = new JButton("!");
-        //this.fak.addActionListener(this);
-        //this.fak.setFont(new Font("Arial", Font.PLAIN, 40));
-        //this.panel.add(fak);
-
-        this.equals = new JButton("=");
-        this.equals.addActionListener(this);
-        this.equals.setFont(new Font("Arial", Font.PLAIN, 40));
-        this.panel.add(equals);
+        this.pi = new JButton("π");
+        this.pi.addActionListener(this);
+        this.pi.setFont(new Font("Arial", Font.PLAIN, 40));
+        this.panel.add(pi);
 
         this.AC = new JButton("AC");
         this.AC.addActionListener(this);
@@ -176,6 +170,11 @@ public class Interface extends JFrame implements ActionListener {
         this.exit.addActionListener(this);
         this.exit.setFont(new Font("Arial", Font.PLAIN, 40));
         this.panel.add(exit);
+
+        this.equals = new JButton("=");
+        this.equals.addActionListener(this);
+        this.equals.setFont(new Font("Arial", Font.PLAIN, 40));
+        this.panel.add(equals);
 
     }
 

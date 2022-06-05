@@ -15,4 +15,9 @@ public class Sinus extends Command {
         sinus.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "sin";
+    }
 }

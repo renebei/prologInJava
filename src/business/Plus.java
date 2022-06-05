@@ -16,4 +16,9 @@ public class Plus extends Command {
         add.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "+";
+    }
 }

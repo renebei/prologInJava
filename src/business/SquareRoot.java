@@ -15,4 +15,9 @@ public class SquareRoot extends Command {
         squareRoot.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "√";
+    }
 }

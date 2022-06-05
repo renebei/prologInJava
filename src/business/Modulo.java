@@ -15,4 +15,9 @@ public class Modulo extends Command {
         modulo.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "%";
+    }
 }

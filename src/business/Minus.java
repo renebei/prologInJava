@@ -15,4 +15,9 @@ public class Minus extends Command {
         minus.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "-";
+    }
 }

@@ -15,4 +15,9 @@ public class Power extends Command {
         power.close();
         return sol;
     }
+
+    @Override
+    public String toString() {
+        return "^";
+    }
 }
