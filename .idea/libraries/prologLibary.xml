@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="prologLibary">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../prologLibary" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../prologLibary" recursive="false" />
+  </library>
+</component>
