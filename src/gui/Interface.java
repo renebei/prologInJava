@@ -1,6 +1,7 @@
 package gui;
 
 import business.*;
+import org.jpl7.PrologException;
 
 import javax.swing.*;
 import java.awt.*;
@@ -76,10 +77,14 @@ public class Interface extends JFrame implements ActionListener {
         } else if (source == exit) {
             System.exit(0);
         } else if (source == equals) {
-            if(!res.getText().equals(""))
-                this.entry2 = Double.parseDouble(res.getText());
-            else entry2 = 0;
-            res.setText(last.execute(entry1, entry2).toString());
+            try {
+                if (!res.getText().equals(""))
+                    this.entry2 = Double.parseDouble(res.getText());
+                else entry2 = 0;
+                res.setText(last.execute(entry1, entry2).toString());
+            } catch(PrologException pl) {
+                res.setText("BIST DU DUMM ODER SO???");
+            }
         } else {
             for (int i = 0; i < 10; i++) {
                 if (source == numbers[i]) {

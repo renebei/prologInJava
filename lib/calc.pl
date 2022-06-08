@@ -1,7 +1,7 @@
 add(X, Y, Z) :-
 	Z is X + Y.
 	
-power(X,Y,Z) :- 
+power(X,Y,Z) :-  
     Z is X**Y.
 	
 fak(0,1).

@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Plus extends Command {
+
     public Map<String, Term> execute(double a, double b) {
         Variable z = new Variable("Z");
         Term term = Term.textToTerm("add(" + a + "," + b + "," + z + ")");
